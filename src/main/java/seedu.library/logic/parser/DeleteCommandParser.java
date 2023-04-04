@@ -1,10 +1,10 @@
 package seedu.library.logic.parser;
 
-import seedu.address.commons.core.index.Index;
+import seedu.library.commons.core.index.Index;
 import seedu.library.logic.commands.DeleteCommand;
 import seedu.library.logic.parser.exceptions.ParseException;
 
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.library.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
 /**
  * Parses input arguments and creates a new DeleteCommand object

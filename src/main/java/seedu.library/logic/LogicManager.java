@@ -1,12 +1,12 @@
 package seedu.library.logic;
 
 import javafx.collections.ObservableList;
-import seedu.address.commons.core.GuiSettings;
-import seedu.address.commons.core.LogsCenter;
-import seedu.address.model.Model;
-import seedu.address.model.ReadOnlyAddressBook;
-import seedu.address.model.person.Person;
-import seedu.address.storage.Storage;
+import seedu.library.commons.core.GuiSettings;
+import seedu.library.commons.core.LogsCenter;
+import seedu.library.model.Model;
+import seedu.library.model.ReadOnlyLibraryBook;
+import seedu.library.model.person.Person;
+import seedu.library.storage.Storage;
 import seedu.library.logic.commands.Command;
 import seedu.library.logic.commands.CommandResult;
 import seedu.library.logic.commands.exceptions.CommandException;
@@ -55,8 +55,8 @@ public class LogicManager implements Logic {
     }
 
     @Override
-    public ReadOnlyAddressBook getAddressBook() {
-        return model.getAddressBook();
+    public ReadOnlyLibraryBook getAddressBook() {
+        return model.getLibraryBook();
     }
 
     @Override
