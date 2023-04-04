@@ -1,14 +1,14 @@
 package seedu.library.logic.commands;
 
-import seedu.address.model.Model;
-import seedu.address.model.person.Person;
+import seedu.library.model.Model;
+import seedu.library.model.person.Person;
 import seedu.library.logic.commands.exceptions.CommandException;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.*;
+import static seedu.library.logic.parser.CliSyntax.*;
 
 /**
- * Adds a person to the address book.
+ * Adds a person to the library book.
  */
 public class AddCommand extends Command {
 

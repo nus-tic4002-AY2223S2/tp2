@@ -1,9 +1,9 @@
 package seedu.library.logic;
 
 import javafx.collections.ObservableList;
-import seedu.address.commons.core.GuiSettings;
-import seedu.address.model.ReadOnlyAddressBook;
-import seedu.address.model.person.Person;
+import seedu.library.commons.core.GuiSettings;
+import seedu.library.model.ReadOnlyLibraryBook;
+import seedu.library.model.person.Person;
 import seedu.library.logic.commands.CommandResult;
 import seedu.library.logic.commands.exceptions.CommandException;
 import seedu.library.logic.parser.exceptions.ParseException;
@@ -26,9 +26,9 @@ public interface Logic {
     /**
      * Returns the AddressBook.
      *
-     * @see seedu.address.model.Model#getAddressBook()
+     * @see seedu.address.model.Model#getLibraryBook()
      */
-    ReadOnlyAddressBook getAddressBook();
+    ReadOnlyLibraryBook getLibraryBook();
 
     /** Returns an unmodifiable view of the filtered list of persons */
     ObservableList<Person> getFilteredPersonList();

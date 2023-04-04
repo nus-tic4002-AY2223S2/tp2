@@ -1,9 +1,9 @@
 package seedu.library.logic.commands;
 
-import seedu.address.commons.core.Messages;
-import seedu.address.commons.core.index.Index;
-import seedu.address.model.Model;
-import seedu.address.model.person.Person;
+import seedu.library.commons.core.Messages;
+import seedu.library.commons.core.index.Index;
+import seedu.library.model.Model;
+import seedu.library.model.person.Person;
 import seedu.library.logic.commands.exceptions.CommandException;
 
 import java.util.List;

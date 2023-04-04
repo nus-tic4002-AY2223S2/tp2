@@ -1,12 +1,12 @@
 package seedu.library.logic.parser;
 
-import seedu.address.model.person.NameContainsKeywordsPredicate;
+import seedu.library.model.person.NameContainsKeywordsPredicate;
 import seedu.library.logic.commands.FindCommand;
 import seedu.library.logic.parser.exceptions.ParseException;
 
 import java.util.Arrays;
 
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.library.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
 /**
  * Parses input arguments and creates a new FindCommand object
