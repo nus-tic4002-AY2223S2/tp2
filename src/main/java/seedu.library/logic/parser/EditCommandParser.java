@@ -1,8 +1,8 @@
 package seedu.library.logic.parser;
 
-import seedu.address.commons.core.index.Index;
-import seedu.address.logic.commands.EditCommand.EditPersonDescriptor;
-import seedu.address.model.tag.Tag;
+import seedu.library.commons.core.index.Index;
+import seedu.library.logic.commands.EditCommand.EditPersonDescriptor;
+import seedu.library.model.tag.Tag;
 import seedu.library.logic.commands.EditCommand;
 import seedu.library.logic.parser.exceptions.ParseException;
 
@@ -12,8 +12,8 @@ import java.util.Optional;
 import java.util.Set;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.*;
+import static seedu.library.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.library.logic.parser.CliSyntax.*;
 
 /**
  * Parses input arguments and creates a new EditCommand object

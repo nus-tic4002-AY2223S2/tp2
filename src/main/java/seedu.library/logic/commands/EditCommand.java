@@ -1,18 +1,18 @@
 package seedu.library.logic.commands;
 
-import seedu.address.commons.core.Messages;
-import seedu.address.commons.core.index.Index;
-import seedu.address.commons.util.CollectionUtil;
-import seedu.address.model.Model;
-import seedu.address.model.person.*;
-import seedu.address.model.tag.Tag;
+import seedu.library.commons.core.Messages;
+import seedu.library.commons.core.index.Index;
+import seedu.library.commons.util.CollectionUtil;
+import seedu.library.model.Model;
+import seedu.library.model.person.*;
+import seedu.library.model.tag.Tag;
 import seedu.library.logic.commands.exceptions.CommandException;
 
 import java.util.*;
 
 import static java.util.Objects.requireNonNull;
-import static seedu.address.logic.parser.CliSyntax.*;
-import static seedu.address.model.Model.PREDICATE_SHOW_ALL_PERSONS;
+import static seedu.library.logic.parser.CliSyntax.*;
+import static seedu.library.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 /**
  * Edits the details of an existing person in the address book.

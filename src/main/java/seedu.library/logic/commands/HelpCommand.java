@@ -1,6 +1,6 @@
 package seedu.library.logic.commands;
 
-import seedu.address.model.Model;
+import seedu.library.model.Model;
 
 /**
  * Format full help instructions for every command for display.

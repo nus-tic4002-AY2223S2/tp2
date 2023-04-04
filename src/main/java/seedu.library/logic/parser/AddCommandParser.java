@@ -1,15 +1,15 @@
 package seedu.library.logic.parser;
 
-import seedu.address.model.person.*;
-import seedu.address.model.tag.Tag;
+import seedu.library.model.person.*;
+import seedu.library.model.tag.Tag;
 import seedu.library.logic.commands.AddCommand;
 import seedu.library.logic.parser.exceptions.ParseException;
 
 import java.util.Set;
 import java.util.stream.Stream;
 
-import static seedu.address.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
-import static seedu.address.logic.parser.CliSyntax.*;
+import static seedu.library.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
+import static seedu.library.logic.parser.CliSyntax.*;
 
 /**
  * Parses input arguments and creates a new AddCommand object

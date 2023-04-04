@@ -1,8 +1,8 @@
 package seedu.library.logic.commands;
 
-import seedu.address.commons.core.Messages;
-import seedu.address.model.Model;
-import seedu.address.model.person.NameContainsKeywordsPredicate;
+import seedu.library.commons.core.Messages;
+import seedu.library.model.Model;
+import seedu.library.model.person.NameContainsKeywordsPredicate;
 
 import static java.util.Objects.requireNonNull;
 

@@ -1,7 +1,7 @@
 package seedu.library.commons.util;
 
 import javafx.scene.image.Image;
-import seedu.address.MainApp;
+import seedu.library.MainApp;
 
 import static java.util.Objects.requireNonNull;
 
