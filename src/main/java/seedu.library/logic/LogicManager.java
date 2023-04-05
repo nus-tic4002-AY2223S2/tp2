@@ -10,7 +10,7 @@ import seedu.library.storage.Storage;
 import seedu.library.logic.commands.Command;
 import seedu.library.logic.commands.CommandResult;
 import seedu.library.logic.commands.exceptions.CommandException;
-import seedu.library.logic.parser.AddressBookParser;
+import seedu.library.logic.parser.LibraryBookParser;
 import seedu.library.logic.parser.exceptions.ParseException;
 
 import java.io.IOException;
@@ -26,7 +26,7 @@ public class LogicManager implements Logic {
 
     private final Model model;
     private final Storage storage;
-    private final AddressBookParser addressBookParser;
+    private final LibraryBookParser libraryBookParser;
 
     /**
      * Constructs a {@code LogicManager} with the given {@code Model} and {@code Storage}.
@@ -34,7 +34,7 @@ public class LogicManager implements Logic {
     public LogicManager(Model model, Storage storage) {
         this.model = model;
         this.storage = storage;
-        addressBookParser = new AddressBookParser();
+        libraryBookParser = new LibraryBookParser();
     }
 
     @Override
@@ -42,11 +42,11 @@ public class LogicManager implements Logic {
         logger.info("----------------[USER COMMAND][" + commandText + "]");
 
         CommandResult commandResult;
-        Command command = addressBookParser.parseCommand(commandText);
+        Command command = libraryBookParser.parseCommand(commandText);
         commandResult = command.execute(model);
 
         try {
-            storage.saveAddressBook(model.getAddressBook());
+            storage.saveLibraryBook(model.getLibraryBook());
         } catch (IOException ioe) {
             throw new CommandException(FILE_OPS_ERROR_MESSAGE + ioe, ioe);
         }
@@ -55,7 +55,7 @@ public class LogicManager implements Logic {
     }
 
     @Override
-    public ReadOnlyLibraryBook getAddressBook() {
+    public ReadOnlyLibraryBook getLibraryBook() {
         return model.getLibraryBook();
     }
 
@@ -65,8 +65,8 @@ public class LogicManager implements Logic {
     }
 
     @Override
-    public Path getAddressBookFilePath() {
-        return model.getAddressBookFilePath();
+    public Path getLibraryBookFilePath() {
+        return model.getLibraryBookFilePath();
     }
 
     @Override

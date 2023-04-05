@@ -42,12 +42,12 @@ public interface Model {
     /**
      * Sets the user prefs' address book file path.
      */
-    void setAddressBookFilePath(Path addressBookFilePath);
+    void setLibraryBookFilePath(Path libraryBookFilePath);
 
     /**
      * Replaces address book data with the data in {@code addressBook}.
      */
-    void setAddressBook(ReadOnlyLibraryBook libraryBook);
+    void setLibraryBook(ReadOnlyLibraryBook libraryBook);
 
     /** Returns the AddressBook */
     ReadOnlyLibraryBook getLibraryBook();

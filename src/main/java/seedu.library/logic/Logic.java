@@ -26,7 +26,7 @@ public interface Logic {
     /**
      * Returns the AddressBook.
      *
-     * @see seedu.address.model.Model#getLibraryBook()
+     * @see seedu.library.model.Model#getLibraryBook()
      */
     ReadOnlyLibraryBook getLibraryBook();
 
@@ -36,7 +36,7 @@ public interface Logic {
     /**
      * Returns the user prefs' address book file path.
      */
-    Path getAddressBookFilePath();
+    Path getLibraryBookFilePath();
 
     /**
      * Returns the user prefs' GUI settings.
