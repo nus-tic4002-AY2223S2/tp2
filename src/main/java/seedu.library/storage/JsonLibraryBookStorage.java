@@ -45,14 +45,14 @@ public class JsonLibraryBookStorage implements LibraryBookStorage {
     public Optional<ReadOnlyLibraryBook> readLibraryBook(Path filePath) throws DataConversionException {
         requireNonNull(filePath);
 
-        Optional<JsonSerializableAddressBook> jsonAddressBook = JsonUtil.readJsonFile(
-                filePath, JsonSerializableAddressBook.class);
-        if (!jsonAddressBook.isPresent()) {
+        Optional<JsonSerializableLibraryBook> jsonLibraryBook = JsonUtil.readJsonFile(
+                filePath, JsonSerializableLibraryBook.class);
+        if (!jsonLibraryBook.isPresent()) {
             return Optional.empty();
         }
 
         try {
-            return Optional.of(jsonAddressBook.get().toModelType());
+            return Optional.of(jsonLibraryBook.get().toModelType());
         } catch (IllegalValueException ive) {
             logger.info("Illegal values found in " + filePath + ": " + ive.getMessage());
             throw new DataConversionException(ive);
@@ -69,7 +69,7 @@ public class JsonLibraryBookStorage implements LibraryBookStorage {
      *
      * @param filePath location of the data. Cannot be null.
      */
-    public void saveAddressBook(ReadOnlyLibraryBook libraryBook, Path filePath) throws IOException {
+    public void saveLibraryBook(ReadOnlyLibraryBook libraryBook, Path filePath) throws IOException {
         requireNonNull(libraryBook);
         requireNonNull(filePath);
 
