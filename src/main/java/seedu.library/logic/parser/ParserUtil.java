@@ -1,12 +1,12 @@
 package seedu.library.logic.parser;
 
-import seedu.address.commons.core.index.Index;
-import seedu.address.commons.util.StringUtil;
-import seedu.address.model.person.Address;
-import seedu.address.model.person.Email;
-import seedu.address.model.person.Name;
-import seedu.address.model.person.Phone;
-import seedu.address.model.tag.Tag;
+import seedu.library.commons.core.index.Index;
+import seedu.library.commons.util.StringUtil;
+import seedu.library.model.person.Address;
+import seedu.library.model.person.Email;
+import seedu.library.model.person.Name;
+import seedu.library.model.person.Phone;
+import seedu.library.model.tag.Tag;
 import seedu.library.logic.parser.exceptions.ParseException;
 
 import java.util.Collection;

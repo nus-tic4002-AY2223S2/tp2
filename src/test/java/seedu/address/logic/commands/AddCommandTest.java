@@ -103,8 +103,7 @@ public class AddCommandTest {
             throw new AssertionError("This method should not be called.");
         }
 
-        @Override
-        public void setAddressBookFilePath(Path addressBookFilePath) {
+        public void setLibraryBookFilePath(Path addressBookFilePath) {
             throw new AssertionError("This method should not be called.");
         }
 

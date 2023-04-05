@@ -38,6 +38,9 @@ public class UserPrefs implements ReadOnlyUserPrefs {
         setLibaryBookFilePath(newUserPrefs.getLibraryBookFilePath());
     }
 
+    private void setLibaryBookFilePath(Path libraryBookFilePath) {
+    }
+
     public GuiSettings getGuiSettings() {
         return guiSettings;
     }

@@ -1,7 +1,7 @@
 package seedu.library.ui;
 
 import javafx.fxml.FXMLLoader;
-import seedu.address.MainApp;
+import seedu.library.MainApp;
 
 import java.io.IOException;
 import java.net.URL;

@@ -65,12 +65,12 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public Path getAddressBookFilePath() {
+    public Path getLibraryBookFilePath() {
         return userPrefs.getLibraryBookFilePath();
     }
 
     @Override
-    public void setAddressBookFilePath(Path libraryBookFilePath) {
+    public void setLibraryBookFilePath(Path libraryBookFilePath) {
         requireNonNull(libraryBookFilePath);
         userPrefs.setLibraryBookFilePath(libraryBookFilePath);
     }
