@@ -3,7 +3,7 @@ package seedu.library.logic;
 import javafx.collections.ObservableList;
 import seedu.library.commons.core.GuiSettings;
 import seedu.library.model.ReadOnlyLibraryBook;
-import seedu.library.model.person.Person;
+import seedu.library.model.book.Book;
 import seedu.library.logic.commands.CommandResult;
 import seedu.library.logic.commands.exceptions.CommandException;
 import seedu.library.logic.parser.exceptions.ParseException;
@@ -31,10 +31,10 @@ public interface Logic {
     ReadOnlyLibraryBook getLibraryBook();
 
     /** Returns an unmodifiable view of the filtered list of persons */
-    ObservableList<Person> getFilteredPersonList();
+    ObservableList<Book> getFilteredPersonList();
 
     /**
-     * Returns the user prefs' address book file path.
+     * Returns the user prefs' library book file path.
      */
     Path getLibraryBookFilePath();
 

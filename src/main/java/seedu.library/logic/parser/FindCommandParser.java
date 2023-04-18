@@ -1,6 +1,6 @@
 package seedu.library.logic.parser;
 
-import seedu.library.model.person.NameContainsKeywordsPredicate;
+import seedu.library.model.book.TitleContainsKeywordsPredicate;
 import seedu.library.logic.commands.FindCommand;
 import seedu.library.logic.parser.exceptions.ParseException;
 
@@ -27,7 +27,7 @@ public class FindCommandParser implements Parser<FindCommand> {
 
         String[] nameKeywords = trimmedArgs.split("\\s+");
 
-        return new FindCommand(new NameContainsKeywordsPredicate(Arrays.asList(nameKeywords)));
+        return new FindCommand(new TitleContainsKeywordsPredicate(Arrays.asList(nameKeywords)));
     }
 
 }
