@@ -36,7 +36,7 @@ public class ParserUtil {
     }
 
     /**
-     * Parses a {@code String name} into a {@code Title}.
+     * Parses a {@code String title} into a {@code Title}.
      * Leading and trailing whitespaces will be trimmed.
      *
      * @throws ParseException if the given {@code name} is invalid.
@@ -51,7 +51,7 @@ public class ParserUtil {
     }
 
     /**
-     * Parses a {@code String phone} into a {@code Author}.
+     * Parses a {@code String author} into a {@code Author}.
      * Leading and trailing whitespaces will be trimmed.
      *
      * @throws ParseException if the given {@code phone} is invalid.
@@ -66,7 +66,7 @@ public class ParserUtil {
     }
 
     /**
-     * Parses a {@code String library} into an {@code Category}.
+     * Parses a {@code String category} into an {@code Category}.
      * Leading and trailing whitespaces will be trimmed.
      *
      * @throws ParseException if the given {@code library} is invalid.
@@ -81,7 +81,7 @@ public class ParserUtil {
     }
 
     /**
-     * Parses a {@code String email} into an {@code Edition}.
+     * Parses a {@code String edition} into an {@code Edition}.
      * Leading and trailing whitespaces will be trimmed.
      *
      * @throws ParseException if the given {@code email} is invalid.
@@ -101,7 +101,7 @@ public class ParserUtil {
      *
      * @throws ParseException if the given {@code borrower} is invalid.
      */
-    public static Borrower parseTag(String tag) throws ParseException {
+    public static Borrower parseBorrower(String tag) throws ParseException {
         requireNonNull(tag);
         String trimmedTag = tag.trim();
         if (!Borrower.isValidTagName(trimmedTag)) {
@@ -113,12 +113,13 @@ public class ParserUtil {
     /**
      * Parses {@code Collection<String> tags} into a {@code Set<Borrower>}.
      */
-    public static Set<Borrower> parseTags(Collection<String> tags) throws ParseException {
+    public static Set<Borrower> parseBorrowers(Collection<String> tags) throws ParseException {
         requireNonNull(tags);
         final Set<Borrower> borrowerSet = new HashSet<>();
         for (String tagName : tags) {
-            borrowerSet.add(parseTag(tagName));
+            borrowerSet.add(parseBorrower(tagName));
         }
         return borrowerSet;
     }
+
 }

@@ -11,6 +11,10 @@ import java.util.function.Predicate;
  * The API of the Model component.
  */
 public interface Model {
+//    String newUser = "";
+    String getCurrentUser();
+    void setCurrentUser(String s);
+
     /** {@code Predicate} that always evaluate to true */
     Predicate<Book> PREDICATE_SHOW_ALL_PERSONS = unused -> true;
 

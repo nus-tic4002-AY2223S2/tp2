@@ -52,5 +52,4 @@ public class SampleDataUtil {
                 .map(Borrower::new)
                 .collect(Collectors.toSet());
     }
-
 }

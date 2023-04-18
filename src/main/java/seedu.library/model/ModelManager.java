@@ -18,10 +18,20 @@ import static seedu.library.commons.util.CollectionUtil.requireAllNonNull;
  */
 public class ModelManager implements Model {
     private static final Logger logger = LogsCenter.getLogger(ModelManager.class);
-
+    public String currentUser = "";
     private final LibraryBook libraryBook;
     private final UserPrefs userPrefs;
     private final FilteredList<Book> filteredBooks;
+
+    @Override
+    public String getCurrentUser() {
+        return currentUser;
+    }
+
+    @Override
+    public void setCurrentUser(String s) {
+        currentUser = s;
+    }
 
     /**
      * Initializes a ModelManager with the given addressBook and userPrefs.
@@ -39,6 +49,8 @@ public class ModelManager implements Model {
     public ModelManager() {
         this(new LibraryBook(), new UserPrefs());
     }
+
+
 
     //=========== UserPrefs ==================================================================================
 

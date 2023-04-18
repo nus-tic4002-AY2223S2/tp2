@@ -150,45 +150,45 @@ public class ParserUtilTest {
 
     @Test
     public void parseTag_null_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> ParserUtil.parseTag(null));
+        assertThrows(NullPointerException.class, () -> ParserUtil.parseBorrower(null));
     }
 
     @Test
     public void parseTag_invalidValue_throwsParseException() {
-        assertThrows(ParseException.class, () -> ParserUtil.parseTag(INVALID_TAG));
+        assertThrows(ParseException.class, () -> ParserUtil.parseBorrower(INVALID_TAG));
     }
 
     @Test
     public void parseTag_validValueWithoutWhitespace_returnsTag() throws Exception {
         Borrower expectedBorrower = new Borrower(VALID_TAG_1);
-        assertEquals(expectedBorrower, ParserUtil.parseTag(VALID_TAG_1));
+        assertEquals(expectedBorrower, ParserUtil.parseBorrower(VALID_TAG_1));
     }
 
     @Test
     public void parseTag_validValueWithWhitespace_returnsTrimmedTag() throws Exception {
         String tagWithWhitespace = WHITESPACE + VALID_TAG_1 + WHITESPACE;
         Borrower expectedBorrower = new Borrower(VALID_TAG_1);
-        assertEquals(expectedBorrower, ParserUtil.parseTag(tagWithWhitespace));
+        assertEquals(expectedBorrower, ParserUtil.parseBorrower(tagWithWhitespace));
     }
 
     @Test
     public void parseTags_null_throwsNullPointerException() {
-        assertThrows(NullPointerException.class, () -> ParserUtil.parseTags(null));
+        assertThrows(NullPointerException.class, () -> ParserUtil.parseBorrowers(null));
     }
 
     @Test
     public void parseTags_collectionWithInvalidTags_throwsParseException() {
-        assertThrows(ParseException.class, () -> ParserUtil.parseTags(Arrays.asList(VALID_TAG_1, INVALID_TAG)));
+        assertThrows(ParseException.class, () -> ParserUtil.parseBorrowers(Arrays.asList(VALID_TAG_1, INVALID_TAG)));
     }
 
     @Test
     public void parseTags_emptyCollection_returnsEmptySet() throws Exception {
-        assertTrue(ParserUtil.parseTags(Collections.emptyList()).isEmpty());
+        assertTrue(ParserUtil.parseBorrowers(Collections.emptyList()).isEmpty());
     }
 
     @Test
     public void parseTags_collectionWithValidTags_returnsTagSet() throws Exception {
-        Set<Borrower> actualBorrowerSet = ParserUtil.parseTags(Arrays.asList(VALID_TAG_1, VALID_TAG_2));
+        Set<Borrower> actualBorrowerSet = ParserUtil.parseBorrowers(Arrays.asList(VALID_TAG_1, VALID_TAG_2));
         Set<Borrower> expectedBorrowerSet = new HashSet<Borrower>(Arrays.asList(new Borrower(VALID_TAG_1), new Borrower(VALID_TAG_2)));
 
         assertEquals(expectedBorrowerSet, actualBorrowerSet);

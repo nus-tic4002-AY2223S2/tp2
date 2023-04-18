@@ -34,7 +34,7 @@ public class AddCommandParser implements Parser<AddCommand> {
         Author author = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE).get());
         Edition edition = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
         Category category = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
-        Set<Borrower> borrowerList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
+        Set<Borrower> borrowerList = ParserUtil.parseBorrowers(argMultimap.getAllValues(PREFIX_TAG));
 
         Book book = new Book(title, author, edition, category, borrowerList);
 
