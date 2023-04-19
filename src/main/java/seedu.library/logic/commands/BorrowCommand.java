@@ -21,15 +21,13 @@ import static seedu.library.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT
 public class BorrowCommand extends Command {
 
     public static final String COMMAND_WORD = "borrow";
-    public static final String MESSAGE_NOT_AVAILABLE = "The book that you are trying to borrow is not available " +
-            "in the library. Please try other books.";
     public  static final String MESSAGE_BOOK_IS_OUT = "The book was borrowed and has not been returned yet." +
             " For the meantime, you may reserve the book.";
     public static final String MESSAGE_NO_CURRENT_USER = "To borrow books, the user must login first.";
     public String MESSAGE_BORROW_SUCCESS;
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Assigns the book, identified using its displayed index from the library book, to the borrower.\n"
+            + ": Associates the book, identified using its displayed index from the library book, to the borrower.\n"
             + "Parameters: INDEX (must be a positive integer)\n"
             + "Example: " + COMMAND_WORD + " 1";
 
@@ -52,9 +50,9 @@ public class BorrowCommand extends Command {
         }
 
         if (!model.getCurrentUser().isEmpty()) {
-            Book bookToModify = lastShownList.get(targetIndex.getZeroBased());
+            Book bookToBorrow = lastShownList.get(targetIndex.getZeroBased());
 
-            if (bookToModify.getBorrowers().isEmpty()) {
+            if (bookToBorrow.getBorrowers().isEmpty()) {
                 Pattern BASIC_COMMAND_FORMAT = Pattern.compile("(?<commandWord>\\S+)(?<arguments>.*)");
                 String userInput = "edit" + index + " t/" + model.getCurrentUser();
                 Matcher matcher = BASIC_COMMAND_FORMAT.matcher(userInput.trim());

@@ -69,6 +69,9 @@ public class LibraryBookParser {
         case BorrowCommand.COMMAND_WORD:
             return new BorrowCommandParser().parse(arguments);
 
+        case ReturnCommand.COMMAND_WORD:
+            return new ReturnCommandParser().parse(arguments);
+
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
