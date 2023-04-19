@@ -13,7 +13,7 @@ public class LoginCommand extends Command {
     public String MESSAGE_LOGIN_SUCCESS;
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Assigns the current user.\n"
+            + ": Signs in the user.\n"
             + "Parameters: USERNAME (must be alphanumeric)\n"
             + "Example: " + COMMAND_WORD + " Benjamin";
 

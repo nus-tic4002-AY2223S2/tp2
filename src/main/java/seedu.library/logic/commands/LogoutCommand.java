@@ -14,7 +14,7 @@ public class LogoutCommand extends Command {
     public String MESSAGE_LOGOUT_SUCCESS;
 
     public static final String MESSAGE_USAGE = COMMAND_WORD
-            + ": Assigns the current user.\n"
+            + ": Signs out the user.\n"
             + "Parameters: USERNAME (must be alphanumeric)\n"
             + "Example: " + COMMAND_WORD + " Benjamin";
 

@@ -66,6 +66,9 @@ public class LibraryBookParser {
         case LogoutCommand.COMMAND_WORD:
             return new LogoutCommand(arguments);
 
+        case BorrowCommand.COMMAND_WORD:
+            return new BorrowCommandParser().parse(arguments);
+
 
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);

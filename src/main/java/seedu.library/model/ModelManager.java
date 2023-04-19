@@ -87,7 +87,7 @@ public class ModelManager implements Model {
         userPrefs.setLibraryBookFilePath(libraryBookFilePath);
     }
 
-    //=========== AddressBook ================================================================================
+    //=========== LibraryBook ================================================================================
 
     @Override
     public void setLibraryBook(ReadOnlyLibraryBook libraryBook) {

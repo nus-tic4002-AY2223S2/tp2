@@ -11,7 +11,7 @@ import java.util.List;
 import static java.util.Objects.requireNonNull;
 
 /**
- * Deletes a book identified using it's displayed index from the library book.
+ * Deletes a book identified using its displayed index from the library book.
  */
 public class DeleteCommand extends Command {
 

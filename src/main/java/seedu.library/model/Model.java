@@ -49,11 +49,11 @@ public interface Model {
     void setLibraryBookFilePath(Path libraryBookFilePath);
 
     /**
-     * Replaces library book data with the data in {@code addressBook}.
+     * Replaces library book data with the data in {@code libraryBook}.
      */
     void setLibraryBook(ReadOnlyLibraryBook libraryBook);
 
-    /** Returns the AddressBook */
+    /** Returns the LibraryBook */
     ReadOnlyLibraryBook getLibraryBook();
 
     /**
