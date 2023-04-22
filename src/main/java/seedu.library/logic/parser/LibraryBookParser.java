@@ -60,6 +60,24 @@ public class LibraryBookParser {
         case HelpCommand.COMMAND_WORD:
             return new HelpCommand();
 
+        case LoginCommand.COMMAND_WORD:
+            return new LoginCommand(arguments);
+
+        case LogoutCommand.COMMAND_WORD:
+            return new LogoutCommand(arguments);
+
+        case BorrowCommand.COMMAND_WORD:
+            return new BorrowCommandParser().parse(arguments);
+
+        case ReturnCommand.COMMAND_WORD:
+            return new ReturnCommandParser().parse(arguments);
+
+        case ReserveCommand.COMMAND_WORD:
+            return new ReserveCommandParser().parse(arguments);
+
+        case CancelCommand.COMMAND_WORD:
+            return new CancelCommandParser().parse(arguments);
+
         default:
             throw new ParseException(MESSAGE_UNKNOWN_COMMAND);
         }

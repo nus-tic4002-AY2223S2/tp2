@@ -14,7 +14,7 @@ import static java.util.Objects.requireNonNull;
 public class UserPrefs implements ReadOnlyUserPrefs {
 
     private GuiSettings guiSettings = new GuiSettings();
-    private Path libraryBookFilePath = Paths.get("data" , "librarybook.json");
+    private Path libraryBookFilePath = Paths.get("data" , "library.json");
 
     /**
      * Creates a {@code UserPrefs} with default values.

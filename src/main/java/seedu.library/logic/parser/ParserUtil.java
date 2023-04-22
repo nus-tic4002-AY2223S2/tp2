@@ -2,15 +2,16 @@ package seedu.library.logic.parser;
 
 import seedu.library.commons.core.index.Index;
 import seedu.library.commons.util.StringUtil;
-import seedu.library.model.person.Address;
-import seedu.library.model.person.Email;
-import seedu.library.model.person.Name;
-import seedu.library.model.person.Phone;
-import seedu.library.model.tag.Tag;
+import seedu.library.model.book.Category;
+import seedu.library.model.book.Edition;
+import seedu.library.model.book.Author;
+import seedu.library.model.book.Title;
+import seedu.library.model.borrower.Borrower;
 import seedu.library.logic.parser.exceptions.ParseException;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import static java.util.Objects.requireNonNull;
@@ -36,89 +37,90 @@ public class ParserUtil {
     }
 
     /**
-     * Parses a {@code String name} into a {@code Name}.
+     * Parses a {@code String title} into a {@code Title}.
      * Leading and trailing whitespaces will be trimmed.
      *
      * @throws ParseException if the given {@code name} is invalid.
      */
-    public static Name parseName(String name) throws ParseException {
+    public static Title parseName(String name) throws ParseException {
         requireNonNull(name);
         String trimmedName = name.trim();
-        if (!Name.isValidName(trimmedName)) {
-            throw new ParseException(Name.MESSAGE_CONSTRAINTS);
+        if (!Title.isValidTitle(trimmedName)) {
+            throw new ParseException(Title.MESSAGE_CONSTRAINTS);
         }
-        return new Name(trimmedName);
+        return new Title(trimmedName);
     }
 
     /**
-     * Parses a {@code String phone} into a {@code Phone}.
+     * Parses a {@code String author} into a {@code Author}.
      * Leading and trailing whitespaces will be trimmed.
      *
      * @throws ParseException if the given {@code phone} is invalid.
      */
-    public static Phone parsePhone(String phone) throws ParseException {
+    public static Author parsePhone(String phone) throws ParseException {
         requireNonNull(phone);
         String trimmedPhone = phone.trim();
-        if (!Phone.isValidPhone(trimmedPhone)) {
-            throw new ParseException(Phone.MESSAGE_CONSTRAINTS);
+        if (!Author.isValidPhone(trimmedPhone)) {
+            throw new ParseException(Author.MESSAGE_CONSTRAINTS);
         }
-        return new Phone(trimmedPhone);
+        return new Author(trimmedPhone);
     }
 
     /**
-     * Parses a {@code String address} into an {@code Address}.
+     * Parses a {@code String category} into an {@code Category}.
      * Leading and trailing whitespaces will be trimmed.
      *
-     * @throws ParseException if the given {@code address} is invalid.
+     * @throws ParseException if the given {@code library} is invalid.
      */
-    public static Address parseAddress(String address) throws ParseException {
+    public static Category parseAddress(String address) throws ParseException {
         requireNonNull(address);
         String trimmedAddress = address.trim();
-        if (!Address.isValidAddress(trimmedAddress)) {
-            throw new ParseException(Address.MESSAGE_CONSTRAINTS);
+        if (!Category.isValidCategory(trimmedAddress)) {
+            throw new ParseException(Category.MESSAGE_CONSTRAINTS);
         }
-        return new Address(trimmedAddress);
+        return new Category(trimmedAddress);
     }
 
     /**
-     * Parses a {@code String email} into an {@code Email}.
+     * Parses a {@code String edition} into an {@code Edition}.
      * Leading and trailing whitespaces will be trimmed.
      *
      * @throws ParseException if the given {@code email} is invalid.
      */
-    public static Email parseEmail(String email) throws ParseException {
+    public static Edition parseEmail(String email) throws ParseException {
         requireNonNull(email);
         String trimmedEmail = email.trim();
-        if (!Email.isValidEmail(trimmedEmail)) {
-            throw new ParseException(Email.MESSAGE_CONSTRAINTS);
+        if (!Edition.isValidEmail(trimmedEmail)) {
+            throw new ParseException(Edition.MESSAGE_CONSTRAINTS);
         }
-        return new Email(trimmedEmail);
+        return new Edition(trimmedEmail);
     }
 
     /**
-     * Parses a {@code String tag} into a {@code Tag}.
+     * Parses a {@code String borrower} into a {@code Borrower}.
      * Leading and trailing whitespaces will be trimmed.
      *
-     * @throws ParseException if the given {@code tag} is invalid.
+     * @throws ParseException if the given {@code borrower} is invalid.
      */
-    public static Tag parseTag(String tag) throws ParseException {
+    public static Borrower parseBorrower(String tag) throws ParseException {
         requireNonNull(tag);
         String trimmedTag = tag.trim();
-        if (!Tag.isValidTagName(trimmedTag)) {
-            throw new ParseException(Tag.MESSAGE_CONSTRAINTS);
+        if (!Borrower.isValidTagName(trimmedTag)) {
+            throw new ParseException(Borrower.MESSAGE_CONSTRAINTS);
         }
-        return new Tag(trimmedTag);
+        return new Borrower(trimmedTag);
     }
 
     /**
-     * Parses {@code Collection<String> tags} into a {@code Set<Tag>}.
+     * Parses {@code Collection<String> tags} into a {@code Set<Borrower>}.
      */
-    public static Set<Tag> parseTags(Collection<String> tags) throws ParseException {
+    public static LinkedHashSet<Borrower> parseBorrowers(Collection<String> tags) throws ParseException {
         requireNonNull(tags);
-        final Set<Tag> tagSet = new HashSet<>();
+        final LinkedHashSet<Borrower> borrowerSet = new LinkedHashSet<>();
         for (String tagName : tags) {
-            tagSet.add(parseTag(tagName));
+            borrowerSet.add(parseBorrower(tagName));
         }
-        return tagSet;
+        return borrowerSet;
     }
+
 }

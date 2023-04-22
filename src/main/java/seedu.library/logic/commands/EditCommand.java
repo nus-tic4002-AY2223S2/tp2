@@ -4,8 +4,8 @@ import seedu.library.commons.core.Messages;
 import seedu.library.commons.core.index.Index;
 import seedu.library.commons.util.CollectionUtil;
 import seedu.library.model.Model;
-import seedu.library.model.person.*;
-import seedu.library.model.tag.Tag;
+import seedu.library.model.book.*;
+import seedu.library.model.borrower.Borrower;
 import seedu.library.logic.commands.exceptions.CommandException;
 
 import java.util.*;
@@ -15,14 +15,14 @@ import static seedu.library.logic.parser.CliSyntax.*;
 import static seedu.library.model.Model.PREDICATE_SHOW_ALL_PERSONS;
 
 /**
- * Edits the details of an existing person in the address book.
+ * Edits the details of an existing book in the library book.
  */
 public class EditCommand extends Command {
 
     public static final String COMMAND_WORD = "edit";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the person identified "
-            + "by the index number used in the displayed person list. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Edits the details of the book identified "
+            + "by the index number used in the displayed book list. "
             + "Existing values will be overwritten by the input values.\n"
             + "Parameters: INDEX (must be a positive integer) "
             + "[" + PREFIX_NAME + "NAME] "
@@ -34,60 +34,60 @@ public class EditCommand extends Command {
             + PREFIX_PHONE + "91234567 "
             + PREFIX_EMAIL + "johndoe@example.com";
 
-    public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Edited Person: %1$s";
+    public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Edited Book: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the address book.";
+    public static final String MESSAGE_DUPLICATE_PERSON = "This book already exists in the library book.";
 
     private final Index index;
-    private final EditPersonDescriptor editPersonDescriptor;
+    private final EditBookDescriptor editBookDescriptor;
 
     /**
-     * @param index of the person in the filtered person list to edit
-     * @param editPersonDescriptor details to edit the person with
+     * @param index of the book in the filtered book list to edit
+     * @param editBookDescriptor details to edit the book with
      */
-    public EditCommand(Index index, EditPersonDescriptor editPersonDescriptor) {
+    public EditCommand(Index index, EditBookDescriptor editBookDescriptor) {
         requireNonNull(index);
-        requireNonNull(editPersonDescriptor);
+        requireNonNull(editBookDescriptor);
 
         this.index = index;
-        this.editPersonDescriptor = new EditPersonDescriptor(editPersonDescriptor);
+        this.editBookDescriptor = new EditBookDescriptor(editBookDescriptor);
     }
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
-        List<Person> lastShownList = model.getFilteredPersonList();
+        List<Book> lastShownList = model.getFilteredBookList();
 
         if (index.getZeroBased() >= lastShownList.size()) {
             throw new CommandException(Messages.MESSAGE_INVALID_PERSON_DISPLAYED_INDEX);
         }
 
-        Person personToEdit = lastShownList.get(index.getZeroBased());
-        Person editedPerson = createEditedPerson(personToEdit, editPersonDescriptor);
+        Book bookToEdit = lastShownList.get(index.getZeroBased());
+        Book editedBook = createEditedPerson(bookToEdit, editBookDescriptor);
 
-        if (!personToEdit.isSamePerson(editedPerson) && model.hasPerson(editedPerson)) {
+        if (!bookToEdit.isSameBook(editedBook) && model.hasBook(editedBook)) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
         }
 
-        model.setPerson(personToEdit, editedPerson);
-        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
-        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, editedPerson));
+        model.setBook(bookToEdit, editedBook);
+        model.updateFilteredBookList(PREDICATE_SHOW_ALL_PERSONS);
+        return new CommandResult(String.format(MESSAGE_EDIT_PERSON_SUCCESS, editedBook));
     }
 
     /**
-     * Creates and returns a {@code Person} with the details of {@code personToEdit}
-     * edited with {@code editPersonDescriptor}.
+     * Creates and returns a {@code Book} with the details of {@code bookToEdit}
+     * edited with {@code editBookDescriptor}.
      */
-    private static Person createEditedPerson(Person personToEdit, EditPersonDescriptor editPersonDescriptor) {
-        assert personToEdit != null;
+    private static Book createEditedPerson(Book bookToEdit, EditBookDescriptor editBookDescriptor) {
+        assert bookToEdit != null;
 
-        Name updatedName = editPersonDescriptor.getName().orElse(personToEdit.getName());
-        Phone updatedPhone = editPersonDescriptor.getPhone().orElse(personToEdit.getPhone());
-        Email updatedEmail = editPersonDescriptor.getEmail().orElse(personToEdit.getEmail());
-        Address updatedAddress = editPersonDescriptor.getAddress().orElse(personToEdit.getAddress());
-        Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
+        Title updatedTitle = editBookDescriptor.getName().orElse(bookToEdit.getTitle());
+        Author updatedAuthor = editBookDescriptor.getPhone().orElse(bookToEdit.getAuthor());
+        Edition updatedEdition = editBookDescriptor.getEmail().orElse(bookToEdit.getEdition());
+        Category updatedCategory = editBookDescriptor.getAddress().orElse(bookToEdit.getCategory());
+        Set<Borrower> updatedBorrowers = editBookDescriptor.getTags().orElse(bookToEdit.getBorrowers());
 
-        return new Person(updatedName, updatedPhone, updatedEmail, updatedAddress, updatedTags);
+        return new Book(updatedTitle, updatedAuthor, updatedEdition, updatedCategory, updatedBorrowers);
     }
 
     @Override
@@ -105,88 +105,88 @@ public class EditCommand extends Command {
         // state check
         EditCommand e = (EditCommand) other;
         return index.equals(e.index)
-                && editPersonDescriptor.equals(e.editPersonDescriptor);
+                && editBookDescriptor.equals(e.editBookDescriptor);
     }
 
     /**
-     * Stores the details to edit the person with. Each non-empty field value will replace the
-     * corresponding field value of the person.
+     * Stores the details to edit the book with. Each non-empty field value will replace the
+     * corresponding field value of the book.
      */
-    public static class EditPersonDescriptor {
-        private Name name;
-        private Phone phone;
-        private Email email;
-        private Address address;
-        private Set<Tag> tags;
+    public static class EditBookDescriptor {
+        private Title title;
+        private Author author;
+        private Edition edition;
+        private Category category;
+        private LinkedHashSet<Borrower> borrowers;
 
-        public EditPersonDescriptor() {}
+        public EditBookDescriptor() {}
 
         /**
          * Copy constructor.
-         * A defensive copy of {@code tags} is used internally.
+         * A defensive copy of {@code borrowers} is used internally.
          */
-        public EditPersonDescriptor(EditPersonDescriptor toCopy) {
-            setName(toCopy.name);
-            setPhone(toCopy.phone);
-            setEmail(toCopy.email);
-            setAddress(toCopy.address);
-            setTags(toCopy.tags);
+        public EditBookDescriptor(EditBookDescriptor toCopy) {
+            setName(toCopy.title);
+            setPhone(toCopy.author);
+            setEmail(toCopy.edition);
+            setAddress(toCopy.category);
+            setTags(toCopy.borrowers);
         }
 
         /**
          * Returns true if at least one field is edited.
          */
         public boolean isAnyFieldEdited() {
-            return CollectionUtil.isAnyNonNull(name, phone, email, address, tags);
+            return CollectionUtil.isAnyNonNull(title, author, edition, category, borrowers);
         }
 
-        public void setName(Name name) {
-            this.name = name;
+        public void setName(Title title) {
+            this.title = title;
         }
 
-        public Optional<Name> getName() {
-            return Optional.ofNullable(name);
+        public Optional<Title> getName() {
+            return Optional.ofNullable(title);
         }
 
-        public void setPhone(Phone phone) {
-            this.phone = phone;
+        public void setPhone(Author author) {
+            this.author = author;
         }
 
-        public Optional<Phone> getPhone() {
-            return Optional.ofNullable(phone);
+        public Optional<Author> getPhone() {
+            return Optional.ofNullable(author);
         }
 
-        public void setEmail(Email email) {
-            this.email = email;
+        public void setEmail(Edition edition) {
+            this.edition = edition;
         }
 
-        public Optional<Email> getEmail() {
-            return Optional.ofNullable(email);
+        public Optional<Edition> getEmail() {
+            return Optional.ofNullable(edition);
         }
 
-        public void setAddress(Address address) {
-            this.address = address;
+        public void setAddress(Category category) {
+            this.category = category;
         }
 
-        public Optional<Address> getAddress() {
-            return Optional.ofNullable(address);
+        public Optional<Category> getAddress() {
+            return Optional.ofNullable(category);
         }
 
         /**
-         * Sets {@code tags} to this object's {@code tags}.
-         * A defensive copy of {@code tags} is used internally.
+         * Sets {@code borrowers} to this object's {@code borrowers}.
+         * A defensive copy of {@code borrowers} is used internally.
          */
-        public void setTags(Set<Tag> tags) {
-            this.tags = (tags != null) ? new HashSet<>(tags) : null;
+        public void setTags(LinkedHashSet<Borrower> borrowers) {
+            this.borrowers = (borrowers != null) ? new LinkedHashSet<>(borrowers) : null;
         }
 
         /**
-         * Returns an unmodifiable tag set, which throws {@code UnsupportedOperationException}
+         * Returns an unmodifiable borrower set, which throws {@code UnsupportedOperationException}
          * if modification is attempted.
-         * Returns {@code Optional#empty()} if {@code tags} is null.
+         * Returns {@code Optional#empty()} if {@code borrowers} is null.
          */
-        public Optional<Set<Tag>> getTags() {
-            return (tags != null) ? Optional.of(Collections.unmodifiableSet(tags)) : Optional.empty();
+        public Optional<Set<Borrower>> getTags() {
+            return (borrowers != null) ? Optional.of(Collections.unmodifiableSet(borrowers)) : Optional.empty();
         }
 
         @Override
@@ -197,12 +197,12 @@ public class EditCommand extends Command {
             }
 
             // instanceof handles nulls
-            if (!(other instanceof EditPersonDescriptor)) {
+            if (!(other instanceof EditBookDescriptor)) {
                 return false;
             }
 
             // state check
-            EditPersonDescriptor e = (EditPersonDescriptor) other;
+            EditBookDescriptor e = (EditBookDescriptor) other;
 
             return getName().equals(e.getName())
                     && getPhone().equals(e.getPhone())

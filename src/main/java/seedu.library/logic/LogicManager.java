@@ -5,7 +5,7 @@ import seedu.library.commons.core.GuiSettings;
 import seedu.library.commons.core.LogsCenter;
 import seedu.library.model.Model;
 import seedu.library.model.ReadOnlyLibraryBook;
-import seedu.library.model.person.Person;
+import seedu.library.model.book.Book;
 import seedu.library.storage.Storage;
 import seedu.library.logic.commands.Command;
 import seedu.library.logic.commands.CommandResult;
@@ -60,8 +60,8 @@ public class LogicManager implements Logic {
     }
 
     @Override
-    public ObservableList<Person> getFilteredPersonList() {
-        return model.getFilteredPersonList();
+    public ObservableList<Book> getFilteredPersonList() {
+        return model.getFilteredBookList();
     }
 
     @Override

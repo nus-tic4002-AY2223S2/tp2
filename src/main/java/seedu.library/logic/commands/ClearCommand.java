@@ -6,12 +6,12 @@ import seedu.library.model.Model;
 import static java.util.Objects.requireNonNull;
 
 /**
- * Clears the address book.
+ * Clears the library book.
  */
 public class ClearCommand extends Command {
 
     public static final String COMMAND_WORD = "clear";
-    public static final String MESSAGE_SUCCESS = "Address book has been cleared!";
+    public static final String MESSAGE_SUCCESS = "Category book has been cleared!";
 
 
     @Override

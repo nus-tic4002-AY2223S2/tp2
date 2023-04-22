@@ -4,7 +4,7 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import seedu.library.commons.core.GuiSettings;
 import seedu.library.commons.core.LogsCenter;
-import seedu.library.model.person.Person;
+import seedu.library.model.book.Book;
 
 import java.nio.file.Path;
 import java.util.function.Predicate;
@@ -18,10 +18,20 @@ import static seedu.library.commons.util.CollectionUtil.requireAllNonNull;
  */
 public class ModelManager implements Model {
     private static final Logger logger = LogsCenter.getLogger(ModelManager.class);
-
+    public String currentUser = "";
     private final LibraryBook libraryBook;
     private final UserPrefs userPrefs;
-    private final FilteredList<Person> filteredPersons;
+    private final FilteredList<Book> filteredBooks;
+
+    @Override
+    public String getCurrentUser() {
+        return currentUser;
+    }
+
+    @Override
+    public void setCurrentUser(String s) {
+        currentUser = s;
+    }
 
     /**
      * Initializes a ModelManager with the given addressBook and userPrefs.
@@ -33,12 +43,14 @@ public class ModelManager implements Model {
 
         this.libraryBook = new LibraryBook(libraryBook);
         this.userPrefs = new UserPrefs(userPrefs);
-        filteredPersons = new FilteredList<>(this.libraryBook.getPersonList());
+        filteredBooks = new FilteredList<>(this.libraryBook.getBookList());
     }
 
     public ModelManager() {
         this(new LibraryBook(), new UserPrefs());
     }
+
+
 
     //=========== UserPrefs ==================================================================================
 
@@ -75,7 +87,7 @@ public class ModelManager implements Model {
         userPrefs.setLibraryBookFilePath(libraryBookFilePath);
     }
 
-    //=========== AddressBook ================================================================================
+    //=========== LibraryBook ================================================================================
 
     @Override
     public void setLibraryBook(ReadOnlyLibraryBook libraryBook) {
@@ -88,44 +100,44 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public boolean hasPerson(Person person) {
-        requireNonNull(person);
-        return libraryBook.hasPerson(person);
+    public boolean hasBook(Book book) {
+        requireNonNull(book);
+        return libraryBook.hasBook(book);
     }
 
     @Override
-    public void deletePerson(Person target) {
-        libraryBook.removePerson(target);
+    public void deleteBook(Book target) {
+        libraryBook.removeBook(target);
     }
 
     @Override
-    public void addPerson(Person person) {
-        libraryBook.addPerson(person);
-        updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+    public void addBook(Book book) {
+        libraryBook.addBook(book);
+        updateFilteredBookList(PREDICATE_SHOW_ALL_PERSONS);
     }
 
     @Override
-    public void setPerson(Person target, Person editedPerson) {
-        requireAllNonNull(target, editedPerson);
+    public void setBook(Book target, Book editedBook) {
+        requireAllNonNull(target, editedBook);
 
-        libraryBook.setPerson(target, editedPerson);
+        libraryBook.setBook(target, editedBook);
     }
 
-    //=========== Filtered Person List Accessors =============================================================
+    //=========== Filtered Book List Accessors =============================================================
 
     /**
-     * Returns an unmodifiable view of the list of {@code Person} backed by the internal list of
-     * {@code versionedAddressBook}
+     * Returns an unmodifiable view of the list of {@code Book} backed by the internal list of
+     * {@code versionedLibraryBook}
      */
     @Override
-    public ObservableList<Person> getFilteredPersonList() {
-        return filteredPersons;
+    public ObservableList<Book> getFilteredBookList() {
+        return filteredBooks;
     }
 
     @Override
-    public void updateFilteredPersonList(Predicate<Person> predicate) {
+    public void updateFilteredBookList(Predicate<Book> predicate) {
         requireNonNull(predicate);
-        filteredPersons.setPredicate(predicate);
+        filteredBooks.setPredicate(predicate);
     }
 
     @Override
@@ -144,7 +156,7 @@ public class ModelManager implements Model {
         ModelManager other = (ModelManager) obj;
         return libraryBook.equals(other.libraryBook)
                 && userPrefs.equals(other.userPrefs)
-                && filteredPersons.equals(other.filteredPersons);
+                && filteredBooks.equals(other.filteredBooks);
     }
 
 }

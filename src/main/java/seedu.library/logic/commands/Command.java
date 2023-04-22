@@ -1,5 +1,6 @@
 package seedu.library.logic.commands;
 
+import seedu.library.logic.parser.exceptions.ParseException;
 import seedu.library.model.Model;
 import seedu.library.logic.commands.exceptions.CommandException;
 
@@ -15,6 +16,6 @@ public abstract class Command {
      * @return feedback message of the operation result for display
      * @throws CommandException If an error occurs during command execution.
      */
-    public abstract CommandResult execute(Model model) throws CommandException;
+    public abstract CommandResult execute(Model model) throws CommandException, ParseException;
 
 }

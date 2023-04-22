@@ -1,20 +1,20 @@
 package seedu.library.logic.commands;
 
 import seedu.library.model.Model;
-import seedu.library.model.person.Person;
+import seedu.library.model.book.Book;
 import seedu.library.logic.commands.exceptions.CommandException;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.library.logic.parser.CliSyntax.*;
 
 /**
- * Adds a person to the library book.
+ * Adds a book to the library book.
  */
 public class AddCommand extends Command {
 
     public static final String COMMAND_WORD = "add";
 
-    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a person to the address book. "
+    public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a book to the library book. "
             + "Parameters: "
             + PREFIX_NAME + "NAME "
             + PREFIX_PHONE + "PHONE "
@@ -29,28 +29,28 @@ public class AddCommand extends Command {
             + PREFIX_TAG + "friends "
             + PREFIX_TAG + "owesMoney";
 
-    public static final String MESSAGE_SUCCESS = "New person added: %1$s";
-    public static final String MESSAGE_DUPLICATE_PERSON = "This person already exists in the address book";
+    public static final String MESSAGE_SUCCESS = "New book added: %1$s";
+    public static final String MESSAGE_DUPLICATE_PERSON = "This book already exists in the library book";
 
-    private final Person toAdd;
+    private final Book toAdd;
 
     /**
-     * Creates an AddCommand to add the specified {@code Person}
+     * Creates an AddCommand to add the specified {@code Book}
      */
-    public AddCommand(Person person) {
-        requireNonNull(person);
-        toAdd = person;
+    public AddCommand(Book book) {
+        requireNonNull(book);
+        toAdd = book;
     }
 
     @Override
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
 
-        if (model.hasPerson(toAdd)) {
+        if (model.hasBook(toAdd)) {
             throw new CommandException(MESSAGE_DUPLICATE_PERSON);
         }
 
-        model.addPerson(toAdd);
+        model.addBook(toAdd);
         return new CommandResult(String.format(MESSAGE_SUCCESS, toAdd));
     }
 

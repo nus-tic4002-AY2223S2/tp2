@@ -1,10 +1,11 @@
 package seedu.library.logic.parser;
 
-import seedu.library.model.person.*;
-import seedu.library.model.tag.Tag;
+import seedu.library.model.book.*;
+import seedu.library.model.borrower.Borrower;
 import seedu.library.logic.commands.AddCommand;
 import seedu.library.logic.parser.exceptions.ParseException;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -30,15 +31,15 @@ public class AddCommandParser implements Parser<AddCommand> {
             throw new ParseException(String.format(MESSAGE_INVALID_COMMAND_FORMAT, AddCommand.MESSAGE_USAGE));
         }
 
-        Name name = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
-        Phone phone = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE).get());
-        Email email = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
-        Address address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
-        Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
+        Title title = ParserUtil.parseName(argMultimap.getValue(PREFIX_NAME).get());
+        Author author = ParserUtil.parsePhone(argMultimap.getValue(PREFIX_PHONE).get());
+        Edition edition = ParserUtil.parseEmail(argMultimap.getValue(PREFIX_EMAIL).get());
+        Category category = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
+        Set<Borrower> borrowerList = ParserUtil.parseBorrowers(argMultimap.getAllValues(PREFIX_TAG));
 
-        Person person = new Person(name, phone, email, address, tagList);
+        Book book = new Book(title, author, edition, category, (LinkedHashSet<Borrower>) borrowerList);
 
-        return new AddCommand(person);
+        return new AddCommand(book);
     }
 
     /**
