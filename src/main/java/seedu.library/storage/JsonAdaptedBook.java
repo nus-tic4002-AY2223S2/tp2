@@ -6,10 +6,7 @@ import seedu.library.commons.exceptions.IllegalValueException;
 import seedu.library.model.book.*;
 import seedu.library.model.borrower.Borrower;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -97,7 +94,7 @@ class JsonAdaptedBook {
         }
         final Category modelCategory = new Category(category);
 
-        final Set<Borrower> modelBorrowers = new HashSet<>(bookBorrowers);
+        final LinkedHashSet<Borrower> modelBorrowers = new LinkedHashSet<>(bookBorrowers);
         return new Book(modelTitle, modelAuthor, modelEdition, modelCategory, modelBorrowers);
     }
 

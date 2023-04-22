@@ -11,6 +11,7 @@ import seedu.library.logic.parser.exceptions.ParseException;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 import static java.util.Objects.requireNonNull;
@@ -113,9 +114,9 @@ public class ParserUtil {
     /**
      * Parses {@code Collection<String> tags} into a {@code Set<Borrower>}.
      */
-    public static Set<Borrower> parseBorrowers(Collection<String> tags) throws ParseException {
+    public static LinkedHashSet<Borrower> parseBorrowers(Collection<String> tags) throws ParseException {
         requireNonNull(tags);
-        final Set<Borrower> borrowerSet = new HashSet<>();
+        final LinkedHashSet<Borrower> borrowerSet = new LinkedHashSet<>();
         for (String tagName : tags) {
             borrowerSet.add(parseBorrower(tagName));
         }

@@ -52,9 +52,7 @@ public class BookCard extends UiPart<Region> {
         author.setText(book.getAuthor().value);
         category.setText(book.getCategory().value);
         edition.setText(book.getEdition().value);
-        book.getBorrowers().stream()
-                .sorted(Comparator.comparing(tag -> tag.borrowerName))
-                .forEach(tag -> borrower.getChildren().add(new Label(tag.borrowerName)));
+        book.getBorrowers().stream().forEach(tag -> borrower.getChildren().add(new Label(tag.borrowerName)));
     }
 
     @Override

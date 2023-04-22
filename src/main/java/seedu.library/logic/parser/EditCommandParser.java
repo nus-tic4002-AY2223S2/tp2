@@ -5,10 +5,7 @@ import seedu.library.model.borrower.Borrower;
 import seedu.library.logic.commands.EditCommand;
 import seedu.library.logic.parser.exceptions.ParseException;
 
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Optional;
-import java.util.Set;
+import java.util.*;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.library.commons.core.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
@@ -64,7 +61,7 @@ public class EditCommandParser implements Parser<EditCommand> {
      * If {@code tags} contain only one element which is an empty string, it will be parsed into a
      * {@code Set<Borrower>} containing zero tags.
      */
-    private Optional<Set<Borrower>> parseTagsForEdit(Collection<String> tags) throws ParseException {
+    private Optional<LinkedHashSet<Borrower>> parseTagsForEdit(Collection<String> tags) throws ParseException {
         assert tags != null;
 
         if (tags.isEmpty()) {

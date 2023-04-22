@@ -5,6 +5,7 @@ import seedu.library.model.borrower.Borrower;
 import seedu.library.logic.commands.AddCommand;
 import seedu.library.logic.parser.exceptions.ParseException;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Stream;
 
@@ -36,7 +37,7 @@ public class AddCommandParser implements Parser<AddCommand> {
         Category category = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
         Set<Borrower> borrowerList = ParserUtil.parseBorrowers(argMultimap.getAllValues(PREFIX_TAG));
 
-        Book book = new Book(title, author, edition, category, borrowerList);
+        Book book = new Book(title, author, edition, category, (LinkedHashSet<Borrower>) borrowerList);
 
         return new AddCommand(book);
     }

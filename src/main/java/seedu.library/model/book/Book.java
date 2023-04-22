@@ -2,10 +2,7 @@ package seedu.library.model.book;
 
 import seedu.library.model.borrower.Borrower;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 import static seedu.library.commons.util.CollectionUtil.requireAllNonNull;
 
@@ -22,7 +19,7 @@ public class Book {
 
     // Data fields
     private final Category category;
-    private final Set<Borrower> borrowers = new HashSet<>();
+    private final Set<Borrower> borrowers = new LinkedHashSet<>();
 
     /**
      * Every field must be present and not null.

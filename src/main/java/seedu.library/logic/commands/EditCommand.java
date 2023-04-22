@@ -117,7 +117,7 @@ public class EditCommand extends Command {
         private Author author;
         private Edition edition;
         private Category category;
-        private Set<Borrower> borrowers;
+        private LinkedHashSet<Borrower> borrowers;
 
         public EditBookDescriptor() {}
 
@@ -176,8 +176,8 @@ public class EditCommand extends Command {
          * Sets {@code borrowers} to this object's {@code borrowers}.
          * A defensive copy of {@code borrowers} is used internally.
          */
-        public void setTags(Set<Borrower> borrowers) {
-            this.borrowers = (borrowers != null) ? new HashSet<>(borrowers) : null;
+        public void setTags(LinkedHashSet<Borrower> borrowers) {
+            this.borrowers = (borrowers != null) ? new LinkedHashSet<>(borrowers) : null;
         }
 
         /**

@@ -1,5 +1,6 @@
 package seedu.library.testutil;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -37,7 +38,7 @@ public class EditBookDescriptorBuilder {
         descriptor.setPhone(book.getAuthor());
         descriptor.setEmail(book.getEdition());
         descriptor.setAddress(book.getCategory());
-        descriptor.setTags(book.getBorrowers());
+        descriptor.setTags((LinkedHashSet<Borrower>) book.getBorrowers());
     }
 
     /**
@@ -77,7 +78,7 @@ public class EditBookDescriptorBuilder {
      * that we are building.
      */
     public EditBookDescriptorBuilder withTags(String... tags) {
-        Set<Borrower> borrowerSet = Stream.of(tags).map(Borrower::new).collect(Collectors.toSet());
+        LinkedHashSet<Borrower> borrowerSet = (LinkedHashSet<Borrower>) Stream.of(tags).map(Borrower::new).collect(Collectors.toSet());
         descriptor.setTags(borrowerSet);
         return this;
     }

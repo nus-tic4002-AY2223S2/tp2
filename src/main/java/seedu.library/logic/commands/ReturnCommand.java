@@ -58,7 +58,6 @@ public class ReturnCommand extends Command {
 
             if (iterator.hasNext()) {
                 Borrower firstElement = iterator.next();
-
                 String firstElementAsString = firstElement.toString().substring(1, firstElement.toString().length() - 1);
                 String currentUserAsString = model.getCurrentUser().toString().trim();
 
