@@ -73,20 +73,33 @@ Shows a message explaning how to access the help page.
 
 Format: `help`
 
+### Login : `login`
 
-### Adding a book: `add`
+To Login to the application.
+
+* User will only be able to borrow or run commands after login.
+
+Format: `login [name]`
+
+### Logout : `logout`
+
+To Logout of the application
+
+Format: `logout [name]`
+
+### Adding a book : `add`
 
 Adds a book to the category book.
 
-Format: `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​`
+Format: `add n/TITLE p/AUTHOR e/EDITION a/CATEGORY [t/TAG]...​`
 
 <div markdown="span" class="alert alert-primary">:bulb: **Tip:**
 A book can have any number of borrowers (including 0)
 </div>
 
 Examples:
-* `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01`
-* `add n/Betsy Crowe t/friend e/betsycrowe@example.com a/Newgate Prison p/1234567 t/criminal`
+* `add n/HARRY POTTER p/J K Rowling e/1st Edition a/Software Engineering t/Roshan`
+* `add n/HARRY POTTER p/J K Rowling e/2nd Edition a/Software Engineering t/Kang`
 
 ### Listing all books : `list`
 
@@ -98,7 +111,7 @@ Format: `list`
 
 Edits an existing book in the category book.
 
-Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`
+Format: `edit INDEX [n/TITLE] [p/AUTHOR] [e/EDITION] [a/CATEGORY] [t/TAG]...​`
 
 * Edits the book at the specified `INDEX`. The index refers to the index number shown in the displayed book list. The index **must be a positive integer** 1, 2, 3, …​
 * At least one of the optional fields must be provided.
@@ -143,6 +156,33 @@ Examples:
 * `list` followed by `delete 2` deletes the 2nd book in the category book.
 * `find Betsy` followed by `delete 1` deletes the 1st book in the results of the `find` command.
 
+### Cancel : `cancel`
+
+Removes the current user.
+
+Format: `cancel INDEX`
+
+* Removes the current user at specified `INDEX` from the library book, from the list of borrowers.
+* The index **must be a positive integer** 1, 2, 3, …​
+
+### Reserve : `reserve`
+
+Reserve a Book.
+
+Format: `reserve INDEX`
+
+* Adds the current user at specified `INDEX` from the library book, to the list of borrowers.
+* The index **must be a positive integer** 1, 2, 3, …​
+
+### Return : `return`
+
+Returns a book.
+
+Format: `return INDEX`
+
+* Disassociates the book at specified `INDEX` from the library book, from the borrower.
+* The index **must be a positive integer** 1, 2, 3, …​
+
 ### Clearing all entries : `clear`
 
 Clears all entries from the category book.
@@ -184,10 +224,15 @@ _Details coming soon ..._
 
 Action | Format, Examples
 --------|------------------
-**Add** | `add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]…​` <br> e.g., `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague`
+**Add** | `add n/TITLE p/AUTHOR e/EDITION a/CATEGORY [t/TAG]...​` <br> e.g., `add n/HARRY POTTER p/J K Rowling e/1st Edition a/Software Engineering t/Roshan`
 **Clear** | `clear`
 **Delete** | `delete INDEX`<br> e.g., `delete 3`
-**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> e.g.,`edit 2 n/James Lee e/jameslee@example.com`
+**Edit** | `edit INDEX [n/TITLE] [p/AUTHOR] [e/EDITION] [a/CATEGORY] [t/TAG]…​`<br> e.g.,`edit 1 p/J K Rowling e/1st Edition`
+**Borrow** | `borrow INDEX`<br> e.g. `borrow 2`
+**Login** | `login <NAME>` <br> e.g. `login Kang`
+**Logout** | `logout <NAME>` <br> e.g. `logout Kang`
+**Reserve** | `reserve INDEX` <br> e.g. `reserve 8`
+**Return** | `return INDEX` <br> e.g. `return 9`
 **Find** | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
 **List** | `list`
 **Help** | `help`
