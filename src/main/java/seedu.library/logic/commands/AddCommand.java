@@ -16,18 +16,17 @@ public class AddCommand extends Command {
 
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a book to the library book. "
             + "Parameters: "
-            + PREFIX_NAME + "NAME "
-            + PREFIX_PHONE + "PHONE "
-            + PREFIX_EMAIL + "EMAIL "
-            + PREFIX_ADDRESS + "ADDRESS "
+            + PREFIX_NAME + "TITLE "
+            + PREFIX_PHONE + "AUTHOR "
+            + PREFIX_EMAIL + "EDITION "
+            + PREFIX_ADDRESS + "CATEGORY "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " "
-            + PREFIX_NAME + "John Doe "
-            + PREFIX_PHONE + "98765432 "
-            + PREFIX_EMAIL + "johnd@example.com "
-            + PREFIX_ADDRESS + "311, Clementi Ave 2, #02-25 "
-            + PREFIX_TAG + "friends "
-            + PREFIX_TAG + "owesMoney";
+            + PREFIX_NAME + "HARRY POTTER "
+            + PREFIX_PHONE + "J K Rowling "
+            + PREFIX_EMAIL + "1st Edition "
+            + PREFIX_ADDRESS + "Software Engineering "
+            + PREFIX_TAG + "Roshan";
 
     public static final String MESSAGE_SUCCESS = "New book added: %1$s";
     public static final String MESSAGE_DUPLICATE_PERSON = "This book already exists in the library book";
