@@ -25,14 +25,14 @@ public class EditCommand extends Command {
             + "by the index number used in the displayed book list. "
             + "Existing values will be overwritten by the input values.\n"
             + "Parameters: INDEX (must be a positive integer) "
-            + "[" + PREFIX_NAME + "NAME] "
-            + "[" + PREFIX_PHONE + "PHONE] "
-            + "[" + PREFIX_EMAIL + "EMAIL] "
-            + "[" + PREFIX_ADDRESS + "ADDRESS] "
+            + "[" + PREFIX_NAME + "TITLE] "
+            + "[" + PREFIX_PHONE + "AUTHOR] "
+            + "[" + PREFIX_EMAIL + "EDITION] "
+            + "[" + PREFIX_ADDRESS + "CATEGORY] "
             + "[" + PREFIX_TAG + "TAG]...\n"
             + "Example: " + COMMAND_WORD + " 1 "
-            + PREFIX_PHONE + "91234567 "
-            + PREFIX_EMAIL + "johndoe@example.com";
+            + PREFIX_PHONE + "J K Rowling "
+            + PREFIX_EMAIL + "1st Edition";
 
     public static final String MESSAGE_EDIT_PERSON_SUCCESS = "Edited Book: %1$s";
     public static final String MESSAGE_NOT_EDITED = "At least one field to edit must be provided.";

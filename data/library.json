@@ -89,5 +89,23 @@
     "edition" : "1st edition",
     "category" : "Business, Investment, Management, Self-help, Personal Development",
     "borrower" : [ "Benjamin", "Janice", "Daphne", "Brent" ]
+  }, {
+    "title" : "Harry Potter",
+    "author" : "J K Rowling",
+    "edition" : "1st Edition",
+    "category" : "Software Engineering",
+    "borrower" : [ "Roshan" ]
+  }, {
+    "title" : "HARRY POTTER v2",
+    "author" : "J K Rowling",
+    "edition" : "1st Edition",
+    "category" : "Software Engineering",
+    "borrower" : [ "Roshan" ]
+  }, {
+    "title" : "HARRY POTTER",
+    "author" : "J K Rowling",
+    "edition" : "1st Edition",
+    "category" : "Software Engineering",
+    "borrower" : [ "Roshan" ]
   } ]
 }
