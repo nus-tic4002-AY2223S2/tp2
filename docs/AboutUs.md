@@ -11,7 +11,7 @@ You can reach us at the edition `seer[at]comp.nus.edu.sg`
 
 ### John Doe
 
-<img src="images/johndoe.png" width="200px">
+[comment]: <> (<img src="images/johndoe.png" width="200px">)
 
 [[homepage](http://www.comp.nus.edu.sg/~damithch)]
 [[github](https://github.com/johndoe)]
@@ -21,7 +21,7 @@ You can reach us at the edition `seer[at]comp.nus.edu.sg`
 
 ### Roshan
 
-<img src="images/johndoe.png" width="200px">
+[comment]: <> (<img src="images/johndoe.png" width="200px">)
 
 [[github](https://github.com/roshankumar1991]
 [[portfolio](team/Roshan.md)]
@@ -31,7 +31,7 @@ You can reach us at the edition `seer[at]comp.nus.edu.sg`
 
 ### Kang Lim
 
-<img src="images/johndoe.png" width="200px">
+[comment]: <> (<img src="images/johndoe.png" width="200px">)
 
 [[github](https://github.com/Opkko)] [[portfolio](team/Kang.md)]
 
