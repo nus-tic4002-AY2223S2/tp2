@@ -28,7 +28,7 @@ Librarian allows the users to: <code>list</code> <code>search</code> <code>borro
 - [x] Create PRs: `#1`, `#5`, `#6`.
 
 ### Community
-- [x] PRs Review: Handles PRs `#2`, `#3`, `#4`.
+- [x] PRs Review: Handles PRs `#2`, `#3`, `#4`, `#8`.
 - [x] Actual Demo: Presented Librarian app in class.
 
 ### Documentation
