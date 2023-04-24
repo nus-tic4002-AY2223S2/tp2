@@ -1,16 +1,16 @@
 # Benjamin B. Rabang III - Project Portfolio Page
 
 ## Overview
-**Librarian** is a cross-platform CLI application tool for managing book borrowing related activities. 
+**LibraryAddressBook** is a cross-platform CLI application tool for managing book borrowing related activities. 
 
 The app is optimized, i.e. shortcut keys are provided, to support efficient typing experience of end-users.
 
-Librarian allows the users to: <code>list</code> <code>search</code> <code>borrow</code> <code>return</code> <code>reserve</code> <code>cancel</code>
+LibraryAddressBook allows the users to: <code>list</code> <code>search</code> <code>borrow</code> <code>return</code> <code>reserve</code> <code>cancel</code>
 
 ## Summary of Contributions
 
 ### Code Implementation
-- [x] Project Setup: Created the GitHub organization and team repository. Established Librarian's architecture.
+- [x] Project Setup: Created the GitHub organization and team repository.
 - [x] Login: Implemented the login command.
 - [x] Logout: Implemented the logout command.
 - [x] Borrow: Implemented the borrow command.
@@ -29,9 +29,9 @@ Librarian allows the users to: <code>list</code> <code>search</code> <code>borro
 
 ### Community
 - [x] PRs Review: Handles PRs `#2`, `#3`, `#4`, `#8`.
-- [x] Actual Demo: Presented Librarian app in class.
+- [x] Actual Demo: Presented LibraryAddressBook app in class.
 
 ### Documentation
 - [x] ReadMe: Provided a simple introduction of the product.
-- [x] Project Portfolio Page: Provided PPP to show my contribution to the Librarian project.
+- [x] Project Portfolio Page: Provided PPP to show my contribution to the LibraryAddressBook project.
 - [x] Demo Video: Recorded a demo video.
