@@ -19,41 +19,41 @@ You can reach us at the edition `seer[at]comp.nus.edu.sg`
 
 * Role: Project Advisor
 
-### Jane Doe
+### Roshan
 
 <img src="images/johndoe.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](https://github.com/roshankumar1991]
+[[portfolio](team/Roshan.md)]
 
 * Role: Team Lead
-* Responsibilities: UI
+* Responsibilities: Backend Dev
 
-### Johnny Doe
-
-<img src="images/johndoe.png" width="200px">
-
-[[github](http://github.com/johndoe)] [[portfolio](team/johndoe.md)]
-
-* Role: Developer
-* Responsibilities: Data
-
-### Jean Doe
+### Kang Lim
 
 <img src="images/johndoe.png" width="200px">
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](https://github.com/Opkko)] [[portfolio](team/Kang.md)]
 
 * Role: Developer
-* Responsibilities: Dev Ops + Threading
+* Responsibilities: Data & Documentation
 
-### James Doe
+### Hana
 
-<img src="images/johndoe.png" width="200px">
+[comment]: <> (<img src="images/johndoe.png" width="200px">)
 
-[[github](http://github.com/johndoe)]
-[[portfolio](team/johndoe.md)]
+[[github](https://github.com/hana-oxy]
+[[portfolio](team/hana.md)]
 
 * Role: Developer
-* Responsibilities: UI
+* Responsibilities: Dev Ops + UI
+
+### Benjamin
+
+[comment]: <> (<img src="images/johndoe.png" width="200px">)
+
+[[github](https://github.com/badassengineer]
+[[portfolio](team/benjamin.md)]
+
+* Role: Developer
+* Responsibilities: Backend Java Logic
