@@ -43,7 +43,7 @@ You can reach us at the edition `seer[at]comp.nus.edu.sg`
 [comment]: <> (<img src="images/johndoe.png" width="200px">)
 
 [[github](https://github.com/hana-oxy]
-[[portfolio](team/hana.md)]
+[[portfolio](team/Hana.md)]
 
 * Role: Developer
 * Responsibilities: Dev Ops + UI
@@ -53,7 +53,7 @@ You can reach us at the edition `seer[at]comp.nus.edu.sg`
 [comment]: <> (<img src="images/johndoe.png" width="200px">)
 
 [[github](https://github.com/badassengineer]
-[[portfolio](team/benjamin.md)]
+[[portfolio](team/Benjamin.md)]
 
 * Role: Developer
 * Responsibilities: Backend Java Logic
