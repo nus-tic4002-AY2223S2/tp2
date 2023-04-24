@@ -236,3 +236,24 @@ Action | Format, Examples
 **Find** | `find KEYWORD [MORE_KEYWORDS]`<br> e.g., `find James Jake`
 **List** | `list`
 **Help** | `help`
+
+## Sample Flow
+--------------------------------------------------------------------------------------------------------------------
+Sequential order
+* login Kang
+* help
+* list
+* borrow 1
+* return 1
+* delete 1
+* add n/HARRY POTTER p/J K Rowling e/1st Edition a/Software Engineering t/Roshan
+* reserve 2
+* find harry
+* logout kang
+
+## How to run Jar File
+--------------------------------------------------------------------------------------------------------------------
+`Step 1:`
+* copy jar file to any empty directory
+* type cmd in explorer header (Windows)
+* type java -jar <jar file name>
