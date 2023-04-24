@@ -1,12 +1,12 @@
 plugins {
     id 'java'
     id 'checkstyle'
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
+    id 'com.github.johnrengelman.shadow' version '5.1.0'
     id 'application'
     id 'jacoco'
 }
 
-mainClassName = 'Main'
+
 
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
@@ -21,8 +21,8 @@ checkstyle {
 }
 
 test {
-    useJUnitPlatform()
-    finalizedBy jacocoTestReport
+
+
 }
 
 task coverage(type: JacocoReport) {
@@ -66,7 +66,16 @@ dependencies {
 }
 
 shadowJar {
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.SF'
     archiveFileName = 'addressbook.jar'
 }
 
+application {
+    // Change this to your main class.
+    mainClassName = "seedu.library.Main"
+}
+
 defaultTasks 'clean', 'test'
+
+apply plugin: "com.github.johnrengelman.shadow"

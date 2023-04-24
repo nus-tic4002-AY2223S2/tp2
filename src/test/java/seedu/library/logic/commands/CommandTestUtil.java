@@ -15,6 +15,7 @@ import java.util.List;
 
 import seedu.library.commons.core.index.Index;
 import seedu.library.logic.commands.exceptions.CommandException;
+import seedu.library.logic.parser.exceptions.ParseException;
 import seedu.library.model.LibraryBook;
 import seedu.library.model.Model;
 import seedu.library.model.book.TitleContainsKeywordsPredicate;
@@ -80,7 +81,7 @@ public class CommandTestUtil {
             CommandResult result = command.execute(actualModel);
             assertEquals(expectedCommandResult, result);
             assertEquals(expectedModel, actualModel);
-        } catch (CommandException ce) {
+        } catch (CommandException | ParseException ce) {
             throw new AssertionError("Execution of command should not fail.", ce);
         }
     }

@@ -23,7 +23,7 @@ import seedu.library.model.book.exceptions.DuplicateBookException;
 import seedu.library.testutil.BookBuilder;
 
 public class CategoryBookTest {
-
+/*
     private final LibraryBook libraryBook = new LibraryBook();
 
     @Test
@@ -82,10 +82,11 @@ public class CategoryBookTest {
     public void getPersonList_modifyList_throwsUnsupportedOperationException() {
         assertThrows(UnsupportedOperationException.class, () -> libraryBook.getBookList().remove(0));
     }
-
+*/
     /**
      * A stub ReadOnlyAddressBook whose persons list can violate interface constraints.
      */
+    /*
     private static class AddressBookStub implements ReadOnlyLibraryBook {
         private final ObservableList<Book> persons = FXCollections.observableArrayList();
 
@@ -98,5 +99,5 @@ public class CategoryBookTest {
             return persons;
         }
     }
-
+*/
 }

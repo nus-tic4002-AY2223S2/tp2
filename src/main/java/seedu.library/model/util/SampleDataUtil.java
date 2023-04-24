@@ -6,6 +6,7 @@ import seedu.library.model.book.*;
 import seedu.library.model.borrower.Borrower;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -48,8 +49,8 @@ public class SampleDataUtil {
     /**
      * Returns a borrower set containing the list of strings given.
      */
-    public static LinkedHashSet<Borrower> getTagSet(String... strings) {
-        return (LinkedHashSet<Borrower>) Arrays.stream(strings)
+    public static HashSet<Borrower> getTagSet(String... strings) {
+        return (HashSet<Borrower>) Arrays.stream(strings)
                 .map(Borrower::new)
                 .collect(Collectors.toSet());
     }
