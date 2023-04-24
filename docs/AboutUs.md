@@ -50,10 +50,10 @@ You can reach us at the edition `seer[at]comp.nus.edu.sg`
 
 ### Benjamin
 
-[comment]: <> (<img src="images/johndoe.png" width="200px">)
+[comment]: <> (<img src="images/badassengineer.jfif" width="200px">)
 
 [[github](https://github.com/badassengineer]
-[[portfolio](team/Benjamin.md)]
+[[portfolio](team/badassengineer.md)]
 
 * Role: Developer
 * Responsibilities: Backend Java Logic
