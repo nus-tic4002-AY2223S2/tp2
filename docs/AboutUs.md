@@ -40,7 +40,7 @@ You can reach us at the edition `seer[at]comp.nus.edu.sg`
 
 ### Benjamin
 
-[comment]: <> (<img src="images/badassengineer.jfif" width="200px">)
+![](team/badassengineer.jfif)
 
 [[github](https://github.com/badassengineer]
 [[portfolio](team/badassengineer.md)]
