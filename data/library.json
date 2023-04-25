@@ -1,0 +1,111 @@
+{
+  "books" : [ {
+    "title" : "Clean Code",
+    "author" : "Robert C. Martin",
+    "edition" : "2nd edition",
+    "category" : "Software Engineering, Programming, Coding",
+    "borrower" : [ "Benjamin" ]
+  }, {
+    "title" : "The Pragmatic Programmer",
+    "author" : "Andrew Hunt, David Thomas",
+    "edition" : "2nd edition",
+    "category" : "Software Engineering, Programming, Coding",
+    "borrower" : [ "Hannah", "Roshan" ]
+  }, {
+    "title" : "Design Patterns",
+    "author" : "Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides",
+    "edition" : "1st edition",
+    "category" : "Software Engineering, Programming, Coding",
+    "borrower" : [ "Hannah", "Roshan", "Kang" ]
+  }, {
+    "title" : "Refactoring",
+    "author" : "Martin Fowler",
+    "edition" : "2nd edition",
+    "category" : "Software Engineering, Programming, Coding",
+    "borrower" : [ ]
+  }, {
+    "title" : "Programming Ruby 1.9 & 2.0",
+    "author" : "David Thomas, Andy Hunt, Chad Fowler",
+    "edition" : "4th edition",
+    "category" : "Software Engineering, Programming, Coding",
+    "borrower" : [ ]
+  }, {
+    "title" : "Steel Structures",
+    "author" : "Salmon, Charles; Johnson, John; Malhas, Faris",
+    "edition" : "5th edition",
+    "category" : "Civil Engineering",
+    "borrower" : [ ]
+  }, {
+    "title" : "Introduction to the Finite Element Method",
+    "author" : "J.N. Reddy",
+    "edition" : "4th edition",
+    "category" : "Civil Engineering, Mechanical Engineering",
+    "borrower" : [ "Benjamin" ]
+  }, {
+    "title" : "Mechanics of Solids and Structures",
+    "author" : "J.N. Reddy",
+    "edition" : "2nd edition",
+    "category" : "Civil Engineering, Mechanical Engineering",
+    "borrower" : [ "Benjamin" ]
+  }, {
+    "title" : "Dynamics of Structures",
+    "author" : "Anil Chopra",
+    "edition" : "5th edition",
+    "category" : "Civil Engineering",
+    "borrower" : [ ]
+  }, {
+    "title" : "Principles of Foundation Engineering",
+    "author" : "Rey Hendricks",
+    "edition" : "1st edition",
+    "category" : "Civil Engineering",
+    "borrower" : [ ]
+  }, {
+    "title" : "Matrix Structural Analysis",
+    "author" : "Richard H Gallagher, Ronald D Ziemian, William McGuire",
+    "edition" : "2nd edition",
+    "category" : "Civil Engineering",
+    "borrower" : [ ]
+  }, {
+    "title" : "Structural Analysis",
+    "author" : "Amin Ghali, A. M. Neville, T. G. Brown",
+    "edition" : "7th edition",
+    "category" : "Civil Engineering",
+    "borrower" : [ ]
+  }, {
+    "title" : "The 4 Hour Work Week",
+    "author" : "Timothy Ferriss",
+    "edition" : "2nd edition",
+    "category" : "Business, Investment, Management, Self-help, Personal Development",
+    "borrower" : [ ]
+  }, {
+    "title" : "Rich Dad, Poor Dad",
+    "author" : "Robert T. Kiyosaki",
+    "edition" : "1st edition",
+    "category" : "Business, Investment, Management, Self-help, Personal Development",
+    "borrower" : [ ]
+  }, {
+    "title" : "Know Your Worth",
+    "author" : "Elizabeth Rosario",
+    "edition" : "1st edition",
+    "category" : "Business, Investment, Management, Self-help, Personal Development",
+    "borrower" : [ "Benjamin", "Janice", "Daphne", "Brent" ]
+  }, {
+    "title" : "Harry Potter",
+    "author" : "J K Rowling",
+    "edition" : "1st Edition",
+    "category" : "Software Engineering",
+    "borrower" : [ "Roshan" ]
+  }, {
+    "title" : "HARRY POTTER v2",
+    "author" : "J K Rowling",
+    "edition" : "1st Edition",
+    "category" : "Software Engineering",
+    "borrower" : [ "Roshan" ]
+  }, {
+    "title" : "HARRY POTTER",
+    "author" : "J K Rowling",
+    "edition" : "1st Edition",
+    "category" : "Software Engineering",
+    "borrower" : [ "Roshan" ]
+  } ]
+}
